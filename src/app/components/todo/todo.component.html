@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="depth-test">
+		<button class="text-center" (click)="calculateDepth()">
+			Calculate Depth
+		</button>
+		<p *ngFor="let tr of testResults; let i = index">
+			{{ printObj(tests[i]) }} ===> {{ tr }}
+		</p>
+	</div>
+	<form #todoForm="ngForm">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-8">
+					<input type="text" #todo class="form-control" placeholder="Add Todo" name="todo" ngModel />
+				</div>
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-primary" (click)="addTodo(todoForm)">
+						Add
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="data">
+			<ul class="list-unstyled">
+				<li *ngFor="let todo of todoArray">
+					<div class="row">
+						<div class="col-sm-1 align-self-center">
+							<input type="checkbox" id="checkbox" (click)="isChecked(todo)" />
+						</div>
+						<div class="col-sm-8 align-self-center li-word-break">
+							<span *ngIf="!todo.isChecked">{{ todo.value }}</span>
+							<s *ngIf="todo.isChecked">{{ todo.value }}</s>
+						</div>
+						<div class="col-sm-3 algn-end">
+							<button type="button" class="btn btn-danger" (click)="deleteTodoItem(todo)">
+								Delete
+							</button>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

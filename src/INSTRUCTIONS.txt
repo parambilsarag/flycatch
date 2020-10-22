@@ -1,0 +1,12 @@
+This is a TODO Application which needs the below fetures to be implemented:
+
+1. Reset the textbox value once the "Add" button is clicked.
+2. Add "Delete" button for each of the todo items.
+3. Add "Checkbox" for each of the todo items. On click of the checkbox the text will be striked off.
+4. Align the "Add" button in the same line as the textbox.
+5. Get Max Depth of Object or Array
+ update the getDepth() function that takes an object as an argument and returns the maximum depth of that object .
+ getDepth({}) ➞ 0
+ getDepth({ a: 1 }) ➞ 1
+ getDepth({ a: 1, b: { c: 1 } }) ➞ 2
+ getDepth({ a: 1, b: { c: 1 }, c: { d: 1 , e : { g : 1} } }) ➞ 3
